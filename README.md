@@ -1,6 +1,10 @@
 # cookbook_course_database
 
-TODO: Enter the cookbook description here.
+This cookbook creates a MySQL database for use with the example sinatra app.
+
+To be able to run tests with Test Kitchen, please create a .kitchen.yml file.
+A .kitchen.sample.yml file is provided as template.
+
 
 ## Supported Platforms
 
