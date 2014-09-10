@@ -1,4 +1,4 @@
-# course_database-cookbook
+# cookbook_course_database
 
 TODO: Enter the cookbook description here.
 
