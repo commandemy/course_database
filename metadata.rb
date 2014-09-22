@@ -4,7 +4,7 @@ maintainer_email 'YOUR_EMAIL'
 license          'All rights reserved'
 description      'Installs/Configures course_database'
 long_description 'Installs/Configures course_database'
-version          '0.1.0'
+version          '0.1.1'
 
 depends 'apt'
 depends 'mysql', '~> 4.0.0'

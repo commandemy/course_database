@@ -40,6 +40,7 @@ mysql_database_user node['database']['username'] do
   connection      mysql_connection_info
   password        node['database']['password']
   database_name   node['database']['dbname']
-  privileges      [:select, :update, :insert]
+  host            '%'
+  privileges      [:all]
   action          [:grant]
 end
