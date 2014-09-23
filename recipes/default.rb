@@ -35,7 +35,7 @@ mysql_database node['database']['dbname'] do
   action :create
 end
 
-# 4 Assign User to DB
+# Assign User to DB
 mysql_database_user node['database']['username'] do
   connection      mysql_connection_info
   password        node['database']['password']
