@@ -44,3 +44,8 @@ mysql_database_user node['database']['username'] do
   privileges      [:all]
   action          [:grant]
 end
+
+# Restart MySQL
+service "mysql" do
+  action :restart
+end
