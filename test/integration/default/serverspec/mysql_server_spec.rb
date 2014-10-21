@@ -1,4 +1,7 @@
-require 'spec_helper'
+require 'serverspec'
+
+# Required by serverspec
+set :backend, :exec
 
 describe 'MySQL' do
 
@@ -12,7 +15,7 @@ describe 'MySQL' do
   end
 
   describe command('service mysql status') do
-    it { should return_stdout /mysql start\/running/ }
+    its(:stdout) { should match /mysql start\/running/ }
   end
 
   describe "can run MySQL queries on the server" do
@@ -21,7 +24,7 @@ describe 'MySQL' do
       describe command(
         "echo \"SELECT User, Host FROM mysql.user\" | mysql --user=course_app --password=supersecret"
       ) do
-        it { should return_stdout /course_app\tlocalhost/ }
+        its(:stdout) { should match /course_app\tlocalhost/ }
       end
     end
 
@@ -29,7 +32,7 @@ describe 'MySQL' do
       describe command(
         "echo \"SELECT DATABASES LIKE 'course_app_prod'\" | mysql --user=course_app --password=supersecret"
       ) do
-        it { should return_stdout /course_app_prod/ }
+        its(:stdout) { should match /course_app_prod/ }
       end
     end
 
