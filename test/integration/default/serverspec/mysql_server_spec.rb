@@ -30,7 +30,7 @@ describe 'MySQL' do
 
     describe "'course_app_prod' database exists" do
       describe command(
-        "echo \"SELECT DATABASES LIKE 'course_app_prod'\" | mysql --user=course_app --password=supersecret"
+        "echo \"SHOW DATABASES LIKE 'course_app_prod'\" | mysql --user=course_app --password=supersecret"
       ) do
         its(:stdout) { should match /course_app_prod/ }
       end
